@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Leitor de Resultados Laboratoriais</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f9f9f9; }
+        textarea { width: 100%; height: 200px; font-size: 14px; }
+        button { padding: 10px 20px; font-size: 16px; margin-top: 10px; }
+        .resultado { margin-top: 20px; font-weight: bold; background: #eef; padding: 10px; border-radius: 5px; }
+        .rodape {position: fixed; bottom: 10px; right: 15px; font-size: 18px; color: #555; }
+        .aviso {position: fixed; bottom: 80px; left: 55px; font-size: 18px; color: #FF0000; }
+    </style>
+</head>
+<body>
+    <h1>Extrator de Exames</h1>
+    <form method="post">
+        <label>Cole aqui o texto do exame:</label><br>
+        <textarea name="texto" required></textarea><br>
+        <button type="submit">Processar</button>
+    </form>
+
+    {% if resultado %}
+        <div class="resultado">
+            {{ resultado }}
+        </div>
+    {% endif %}
+
+    <div class="aviso">Não funciona com nenhum tipo de cultura ou antibiograma. Também há tipos de exames que posso ter esquecido de adicionar no site, sempre confira se não faltou algo.</div>
+    <div class="rodape">Diego Augusto T18</div>
+</body>
+</html>
